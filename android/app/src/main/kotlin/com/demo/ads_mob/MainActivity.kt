@@ -1,4 +1,4 @@
-package com.demo.ads
+package com.demo.ads_mob
 
 import io.flutter.embedding.android.FlutterActivity
 
