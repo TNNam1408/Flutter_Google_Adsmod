@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 
 import 'ads/interstitial.dart';
 
-class Screen2 extends StatefulWidget {
-  const Screen2({super.key});
+class InterstitialScreen extends StatefulWidget {
+  const InterstitialScreen({super.key});
 
   @override
-  State<Screen2> createState() => _Screen2State();
+  State<InterstitialScreen> createState() => _InterstitialScreenState();
 }
 
-class _Screen2State extends State<Screen2> with InterstitialClass {
+class _InterstitialScreenState extends State<InterstitialScreen>
+    with InterstitialClass {
   bool _isLoading = true;
 
   @override

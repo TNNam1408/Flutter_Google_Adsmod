@@ -1,4 +1,5 @@
 import 'package:ads_mob/interstitial_screen.dart';
+import 'package:ads_mob/rewarded_count_down_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
@@ -41,10 +42,26 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: const Text("Flutter Demo Ads Mob"),
       ),
-      body: const Center(
+      body: Center(
         child: Column(
           children: <Widget>[
-            BannerAds(),
+            const BannerAds(),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const RewardedScreen()),
+                );
+              },
+              child: Container(
+                  padding: const EdgeInsets.all(16),
+                  decoration: BoxDecoration(
+                    color: Colors.amber,
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  child: const Text("RewardedScreen")),
+            ),
           ],
         ),
       ),
@@ -52,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const Screen2()),
+            MaterialPageRoute(builder: (context) => const InterstitialScreen()),
           );
         },
         tooltip: 'Push Screen 2',
